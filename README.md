@@ -82,9 +82,10 @@ Make sure your table matches the fields defined in `clientHandler.js`.
 ├── Handler/             # Controller logic (clientHandler.js)
 ├── db/                  # PostgreSQL pool setup (db.js)
 ├── docs/                # Swagger config (swagger.js)
+├── sql/                 # SQL queries
 ├── index.js             # Entry point
 ├── .env                 # Environment variables
-├── .gitignore
+├── .gitignore├── .env
 └── README.md
 ```
 
