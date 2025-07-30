@@ -1,0 +1,12 @@
+
+SELECT * FROM clients where job = 'technician'
+
+SELECT * FROM clients where id = 2
+
+SELECT * FROM clients where age = '50'
+
+SELECT * FROM clients
+
+SELECT COUNT(*) FROM clients;
+
+UPDATE clients SET balance = balance + 100 WHERE id = 2;

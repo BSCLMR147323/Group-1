@@ -1,0 +1,15 @@
+CREATE OR REPLACE FUNCTION update_last_modified()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.last_modified := NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER trg_update_timestamp
+BEFORE UPDATE ON clients
+FOR EACH ROW
+EXECUTE FUNCTION update_last_modified();
+
+SELECT * FROM clients WHERE id = 45112

@@ -1,0 +1,8 @@
+CREATE TABLE client_audit (
+  audit_id SERIAL PRIMARY KEY,
+  client_id INT,
+  action_type TEXT,
+  action_time TIMESTAMP DEFAULT NOW()
+);
+
+SELECT * FROM client_audit

@@ -1,0 +1,32 @@
+/* Schema Design */
+
+DROP TABLE I
+
+CREATE TABLE clients (
+	id SERIAL PRIMARY KEY,
+	age INT,
+	job VARCHAR(50),
+	marital VARCHAR(20),
+	education VARCHAR(50),
+	default_status VARCHAR(10),
+	balance INT,
+	housing VARCHAR(10),
+	loan VARCHAR(10),
+	contact VARCHAR(20),
+	day INT,
+	month VARCHAR(20),
+	duration INT,
+	campaign INT,
+	pdays INT,
+	previous INT,
+	poutcome VARCHAR(20),
+	y VARCHAR(10),  
+	last_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE INDEX idx_job ON clients(job);
+CREATE INDEX idx_y ON clients(y);
+CREATE INDEX idx_education ON clients(education);
+CREATE INDEX idx_age ON clients(age);
+

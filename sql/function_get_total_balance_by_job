@@ -1,0 +1,15 @@
+CREATE OR REPLACE FUNCTION get_total_balance_by_job(job_name TEXT)
+RETURNS INTEGER AS $$
+DECLARE
+  total_balance INTEGER;
+BEGIN
+  SELECT SUM(balance)
+  INTO total_balance
+  FROM clients
+  WHERE job = job_name;
+
+  RETURN total_balance;
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT get_total_balance_by_job('technician')

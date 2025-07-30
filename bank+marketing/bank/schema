@@ -1,0 +1,17 @@
+/* Schema Design */
+
+CREATE TABLE clients (
+	id SERIAL PRIMARY KEY,
+	age INT,
+	job VARCHAR(50),
+	marital VARCHAR(20),
+	education VARCHAR(50),
+	default_status VARCHAR(10),
+	balance INT,
+	housing VARCHAR(10),
+	loan VARCHAR(10),
+	contact VARCHAR(20),
+	day INT,
+	month VARCHAR(20),
+	d
+)

@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION get_conversion_rate()
+RETURNS TABLE (status TEXT, percentage NUMERIC) AS $$
+BEGIN
+  RETURN QUERY
+  SELECT 
+    y::TEXT AS status,
+    ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM clients), 2) AS percentage
+  FROM clients
+  GROUP BY y;
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT get_conversion_rate()
